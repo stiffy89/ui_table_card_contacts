@@ -1,0 +1,63 @@
+{
+    "_version": "1.14.0",
+    "sap.app": {
+        "id": "ns.ui_table_card_contacts",
+        "type": "card",
+        "title": "Contacts table card",
+        "subTitle": "",
+        "applicationVersion": {
+            "version": "1.0.7"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "icons": {
+            "icon": "sap-icon://list"
+        }
+    },
+    "sap.card": {
+        "type": "Table",
+        "designtime": "dt/configuration",
+        "extension": "ext/FormatterExtension",
+        "header": {
+            "title": "Contacts"
+        },
+        "configuration": {
+            "destinations": {
+                "sapes5": {
+                    "name": "ES5",
+                    "label": "sapes5 destination"
+                }
+            }
+        },
+        "data": {
+            "extension": {
+                "method": "getData"
+            },
+            "path": "/d/results/"
+        },
+        "content": {
+            "row": {
+                "columns": [
+                    {
+                        "title": "Full Name",
+                        "value": "{FirstName} {LastName}",
+                        "identifier": true
+                    },
+                    {
+                        "title": "Email",
+                        "value": "{EmailAddress}"
+                    }
+                ]
+            }
+        }
+    },
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
